@@ -1,4 +1,4 @@
-# FAT File System Structure
+﻿# FAT File System Structure
 
 ## FAT 란?
 
@@ -54,7 +54,7 @@
 
 ## 종류
 
-FAT 파일 시스템은 크게 FAT12, FAT16, FAT32로 나눌 수 있다.
+FAT 파일 시스템은 크게 FAT12, FAT16, FAT32로 나눌 수 있다. + exFAT, etc..
 
 FAT 뒤의 숫자는 **비트 수로 최대 표현 가능한 클러스터의 수**를 의미한다.
 
@@ -66,3 +66,26 @@ FAT 뒤의 숫자는 **비트 수로 최대 표현 가능한 클러스터의 수
 |FAT16|65,524 (2^16-12)|
 |FAT32|268,435,444 (2^28-12)|
 
+FAT의 비트 수는 날이 갈 수록 저장매체의 용량이 빠르게 커져 파일 시스템이 그 용량을 표현하지 못했기 때문에 자연스럽게 늘려가게 된 것이다.
+
+---
+
+## FAT 파일 시스템의 구조
+
+FAT 파일 시스템은 크게 `Reserved Area`, `FAT Area`, `Data Area` 로 나눌 수 있다.
+
+![Image]()
+
+### Reserved Area
+
+`Reserved Area`는 FAT 파일 시스템 구조 중 가장 앞에 위치한 구조로, 여러 개의 섹터로 구성된다.
+
+* Reserved Area 의 기본적인 크기
+    * FAT12, FAT16 => 1 Sector
+    * FAT32 => 32 Sectors
+
+#### Reserved Area의 구조
+
+`Reserved Area`는 `Boot Sector`, `FSINFO(File System INFOrmation) Sector`, 추가적인 섹터로 구성된다.
+
+\- 추후 이어서 작성하겠습니다.-
