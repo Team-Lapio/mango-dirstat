@@ -81,7 +81,7 @@ LBA의 시작 주소를 나타낸다.
 
 #### Partition type
 
-![Image]()
+![Image](https://github.com/Team-Lapio/mango-dirstat/blob/master/Partition/Master%20Boot%20Record/Image/partition%20type.png)
 
 출처 : forensic-proof
 
