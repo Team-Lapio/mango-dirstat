@@ -88,4 +88,18 @@ FAT 파일 시스템은 크게 `Reserved Area`, `FAT Area`, `Data Area` 로 나�
 
 `Reserved Area`는 `Boot Sector`, `FSINFO(File System INFOrmation) Sector`, 추가적인 섹터로 구성된다.
 
-\- 추후 이어서 작성하겠습니다.-
+![Image]()
+
+* Boot Sector
+    `Boot Sector` 는 `Reserved Area` 구조 상에서 처음에 위치해 있다. 크기는 1 Sector.
+
+* FSINFO (File System INFOmation)
+    `FSINFO`는 일반적으로 `Boot Sector` 다음에 저장되는 구조이며, 7번째 섹터에 내용을 백업해 둔다.
+    이는 `BPB`에 정의되어 있어 임의로 지정이 가능하다.
+    * 용도<br/>
+        운영체제에게 첫 비할당 클러스터의 위치와 전체 비할당 클러스터의 수를 알려준다.
+
+#### BPB
+
+`Boot Record`를 `BIOS Parameter Block` 라고 부르기도 하는데, 이를 줄여 `BPB`라고 부른다.
+
