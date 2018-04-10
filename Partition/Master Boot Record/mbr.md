@@ -93,3 +93,63 @@ LBA의 시작 주소를 나타낸다.
 0Ch : Windows 95 with 32-bit FAT (using LBA-mode INT 13 extensions)
 ```
 ---
+
+HxD에서 Hex 값을 읽을 때는 거꾸로 읽자!!
+
+#### 파티션을 분석해보자!
+
+```
+Partition 1 : 80 01 01 00 07 FE FF FF 3F 00 00 00 0B AC FF 09
+```
+
+**다음과 같은 파티션이 존재한다면?**
+
+- Boot Indicator : 0x80 -> System Partition
+
+---
+
+**80** 01 01 00 07 FE FF FF 3F 00 00 00 0B AC FF 09
+
+---
+
+- Starting CHS address : 0x00, 0x01, 0x01
+
+---
+
+80 **01 01 00** 07 FE FF FF 3F 00 00 00 0B AC FF 09
+
+---
+
+- Partition Type : 0x07
+
+---
+
+80 01 01 00 **07** FE FF FF 3F 00 00 00 0B AC FF 09
+
+---
+
+- Ending CHS address : 0xFF, 0xFF, 0xFE
+
+---
+
+80 01 01 00 07 **FE FF FF** 3F 00 00 00 0B AC FF 09
+
+---
+
+- Starting LBA address : 0x0000003F => 63
+
+---
+
+80 01 01 00 07 FE FF FF **3F 00 00 00** 0B AC FF 09
+
+---
+
+- Total Sectors : 0x09FFAC0B => 167,750,667
+
+파티션 총 용량 : 167,750,667 * 512 Bytes = 85,888,341,504 Bytes = 76GB
+
+---
+
+80 01 01 00 07 FE FF FF 3F 00 00 00 **0B AC FF 09**
+
+---
