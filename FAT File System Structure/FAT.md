@@ -74,7 +74,7 @@ FAT의 비트 수는 날이 갈 수록 저장매체의 용량이 빠르게 커�
 
 FAT 파일 시스템은 크게 `Reserved Area`, `FAT Area`, `Data Area` 로 나눌 수 있다.
 
-![Image]()
+![Image](https://github.com/Team-Lapio/mango-dirstat/blob/master/FAT%20File%20System%20Structure/Image/FAT%20Structure.PNG)
 
 ### Reserved Area
 
@@ -88,7 +88,7 @@ FAT 파일 시스템은 크게 `Reserved Area`, `FAT Area`, `Data Area` 로 나�
 
 `Reserved Area`는 `Boot Sector`, `FSINFO(File System INFOrmation) Sector`, 추가적인 섹터로 구성된다.
 
-![Image]()
+![Image](https://github.com/Team-Lapio/mango-dirstat/blob/master/FAT%20File%20System%20Structure/Image/Reserved%20Area%20Structure.PNG)
 
 * Boot Sector
     `Boot Sector` 는 `Reserved Area` 구조 상에서 처음에 위치해 있다. 크기는 1 Sector.
