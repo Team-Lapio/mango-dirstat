@@ -11,3 +11,11 @@ def admin_permission():
 
     except:
         return False
+
+
+def check_admin():
+    if ctypes.windll.shell32.IsUserAnAdmin():
+        print("Hello Admin!")
+    else:
+        print("You are not admin!")
+        exit()

@@ -2,7 +2,6 @@ import ctypes
 import admin
 import os
 import sys
-import win32com.shell
 
 
 # -----------------------------------------------------------------
@@ -13,8 +12,7 @@ def admin_permission():
         if ctypes.windll.shell32.IsUserAnAdmin():
             return
         else:
-            ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, sys.argv[0], None, 1)
-
+            n = ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, sys.argv[0], None, 1)
     except:
         return False
 
@@ -27,7 +25,7 @@ if ctypes.windll.shell32.IsUserAnAdmin():
     print("Hello Admin!")
 else:
     print("You are not admin!")
-    exit()
+    # exit()
 # -----------------------------------------------------------------
 # 관리자 권한일 경우 HDD1 섹터 정보를 파일로 입력
 
