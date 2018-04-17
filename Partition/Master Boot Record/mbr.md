@@ -167,3 +167,7 @@ Partition 1 : 80 01 01 00 07 FE FF FF 3F 00 00 00 0B AC FF 09
     - 논리 블록 주소 지정
         - 첫 번째 블록 : LBA 0
         - 두 번째 블록 : LBA 1
+
+* struct.unpack('<L', ~~~)
+    - < : `little-endian` 으로 정렬
+    - L : `unsigned long`
