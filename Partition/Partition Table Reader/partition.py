@@ -1,5 +1,5 @@
 import struct
-
+from main import handle, base
 
 def UnitChange(num):
     sector_size = ['B', 'KB', 'MB', 'GB']
@@ -15,10 +15,19 @@ def UnitChange(num):
 
     return "%.2f %s" % (sizes, sector_size[i])
 
-def ExtendedPartition(part):
+def ExtendedPartition(part, start):
     print("ExtendedPartition")
-    start = struct.unpack('<L', part[8:8+4])[0]  # Starting LBA
-    print("[Extended] %10d" % (start))
+    print(base)
+    
+    handle.seek((base + start) * 512)
+    data = handle.read(0x200)
+
+    if hex(data[510]) == '0x55' and hex(data[511]) == '0xaa':
+        print("Partition Read Success")
+    
+    # start = struct.unpack('<L', part[8:8+4])[0]  # Starting LBA
+    # print("[Extended] %10d" % (start))
+    
 
 
 def PrimaryPartition(part):  # 주 파티션 정보 출력

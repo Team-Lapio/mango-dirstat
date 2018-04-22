@@ -27,7 +27,8 @@ if __name__ == '__main__':
         for i in range(4):
             p = part_info[i]
             if hex(p[4]) == '0xF' or hex(p[4]) == '0x5':
-                partition.ExtendedPartition(p)  # 확장 파티션
+                base = struct.unpack('<L', p[8:8+4])[0]  # Base
+                partition.ExtendedPartition(p, 0)  # 확장 파티션
             elif hex(p[4]) != 0:
                 partition.PrimaryPartition(p)  # 주 파티션
     else:
