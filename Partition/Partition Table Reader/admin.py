@@ -18,4 +18,12 @@ def check_admin():
         print("Hello Admin!")
     else:
         print("You are not admin!")
+        print("---------------------------------------------------")
+        print("If the program does not grant administrator rights,")
+        print("try running IDE as administrator,")
+        print("and then running the program again.")
+        print("---------------------------------------------------")
+        print("프로그램에서 관리자 권한이 부여되지 않는다면")
+        print("IDE를 관리자 권한으로 실행시킨 뒤 프로그램을 다시 실행해보세요")
+        print("---------------------------------------------------")
         exit()

@@ -1,6 +1,3 @@
-import ctypes
-import sys
-import os
 import struct
 import admin
 import partition
